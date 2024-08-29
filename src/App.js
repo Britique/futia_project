@@ -4,12 +4,18 @@ import LandingPage from './components/landingpage';
 import About from './components/about';
 import CareerServices from './components/careerservices';
 import LoginSignUp from './components/loginsignup';
+import './App.css';
+
 
 function App() {
   return (
     <Router>
       <div className="App">
         <nav>
+          <div className="nav-logo">
+            <img src="/images/logo.png" alt="Logo" />
+
+          </div>
           <ul>
             <li>
               <Link to="/">Home</Link>
