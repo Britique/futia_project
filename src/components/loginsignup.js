@@ -1,64 +1,80 @@
 import React, { useState } from 'react';
-import './Auth.css';
+import '../assets/css/Auth.css';
+// Assuming you have a separate CSS file for styling
 
-function Auth() {
-    const [isLogin, setIsLogin] = useState(true);
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [email, setEmail] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
+const AuthForm = () => {
+    // State to manage the active form
+    const [isSignUp, setIsSignUp] = useState(true);
 
-    const handleLogin = (e) => {
-        e.preventDefault();
-        // Call API to login
-        console.log('Login:', username, password);
+    // Function to toggle between Sign Up and Sign In forms
+    const handleSignUpClick = () => {
+        setIsSignUp(true);
     };
 
-    const handleSignup = (e) => {
-        e.preventDefault();
-        // Call API to signup
-        console.log('Signup:', username, email, password, confirmPassword);
-    };
-
-    const toggleAuthMode = () => {
-        setIsLogin(!isLogin);
+    const handleSignInClick = () => {
+        setIsSignUp(false);
     };
 
     return (
-        <div className="auth-page">
-            <h2>{isLogin ? 'Login' : 'Signup'}</h2>
-            <form onSubmit={isLogin ? handleLogin : handleSignup}>
-                {isLogin ? (
-                    <div>
-                        <label>Username:</label>
-                        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-                        <br />
-                        <label>Password:</label>
-                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <div className={`container ${!isSignUp ? 'active' : ''}`} id="container">
+            <div className={`form-container sign-up ${isSignUp ? 'active' : ''}`}>
+                <form>
+                    <h1>Create Account</h1>
+                    <div className="social-icons">
+                        <a href="#" className="icon"><i className="fa-brands fa-google-plus-g"></i></a>
+                        <a href="#" className="icon"><i className="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" className="icon"><i className="fa-brands fa-github"></i></a>
+                        <a href="#" className="icon"><i className="fa-brands fa-linkedin-in"></i></a>
                     </div>
-                ) : (
-                    <div>
-                        <label>Username:</label>
-                        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-                        <br />
-                        <label>Email:</label>
-                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                        <br />
-                        <label>Password:</label>
-                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                        <br />
-                        <label>Confirm Password:</label>
-                        <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                    <span>or use your email for registration</span>
+                    <input type="text" placeholder="Name" />
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Password" />
+                    <button type="button">Sign Up</button>
+                </form>
+            </div>
+            <div className={`form-container sign-in ${!isSignUp ? 'active' : ''}`}>
+                <form>
+                    <h1>Sign In</h1>
+                    <div className="social-icons">
+                        <a href="#" className="icon"><i className="fa-brands fa-google-plus-g"></i></a>
+                        <a href="#" className="icon"><i className="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" className="icon"><i className="fa-brands fa-github"></i></a>
+                        <a href="#" className="icon"><i className="fa-brands fa-linkedin-in"></i></a>
                     </div>
-                )}
-                <button type="submit">{isLogin ? 'Login' : 'Signup'}</button>
-            </form>
-            <p>
-                {isLogin ? 'Don\'t have an account?' : 'Already have an account?'}
-                <span onClick={toggleAuthMode}>{isLogin ? 'Signup' : 'Login'}</span>
-            </p>
+                    <span>or use your email password</span>
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Password" />
+                    <a href="#">Forgot Your Password?</a>
+                    <button type="button">Sign In</button>
+                </form>
+            </div>
+            <div className="toggle-container">
+                <div className="toggle">
+                    <div className="toggle-panel toggle-left">
+                        <h1>Welcome Back!</h1>
+                        <p>Enter your personal details to use all of the site's features</p>
+                        <button
+                            className={`hidden ${isSignUp ? '' : 'active'}`}
+                            onClick={handleSignInClick}
+                        >
+                            Sign In
+                        </button>
+                    </div>
+                    <div className="toggle-panel toggle-right">
+                        <h1>Hello, Friend!</h1>
+                        <p>Register with your personal details to use all of the site's features</p>
+                        <button
+                            className={`hidden ${isSignUp ? 'active' : ''}`}
+                            onClick={handleSignUpClick}
+                        >
+                            Sign Up
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     );
-}
+};
 
-export default Auth;
+export default AuthForm;

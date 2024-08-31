@@ -4,6 +4,8 @@ import LandingPage from './components/landingpage';
 import About from './components/about';
 import CareerServices from './components/careerservices';
 import LoginSignUp from './components/loginsignup';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 import './App.css';
 
 
@@ -13,7 +15,7 @@ function App() {
       <div className="App">
         <nav>
           <div className="nav-logo">
-            <img src="/images/logo.png" alt="Logo" />
+            <img src="/images/logo-2.png" alt="Logo" />
 
           </div>
           <ul>
