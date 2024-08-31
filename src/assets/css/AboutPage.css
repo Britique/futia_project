@@ -1,124 +1,328 @@
+/* Base Styles */
+.body {
+  font-family: sans-serif medium;
+  margin: 0;
+}
+
 .hero-section {
- background-color: #007bff;
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 35px 0;
   text-align: center;
   color: white;
-
 }
 
-.hero-section .hero-content {
-  max-width: 600px;
-  margin: 0 auto;
-  color: #f9f9f9;
-}
-
-.hero-section h1 {
-  font-size: 3rem;
+.hero-content h1 {
+  font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
-.hero-section p {
-  font-size: 1.5rem;
+.hero-content p {
+  font-size: 1.25rem;
+  color: white;
+}
+
+.about-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+}
+
+.about-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.profile-image {
+  flex: 1;
+  text-align: center;
+}
+
+.profile-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 2;
+  padding-left: 40px;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: black;
+  line-height: 1.6;
+}
+
+.learn-more {
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.learn-more:hover {
+  background-color: #004494;
+}
+
+.image-credit {
+  font-size: 0.8rem;
+  color: black;
+}
+
+.about-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-box {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+}
+
+.detail-box:last-child {
+  margin-right: 0;
+}
+
+.detail-box h3 {
+  font-size: 2rem;
+  color: #0056b3;
+  margin-bottom: 20px;
+}
+
+.detail-box p {
+  font-size: 1rem;
+  color: black;
+  line-height: 1.6;
+}
+
+.meet-the-team {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #ffffff;
+}
+
+.meet-the-team h2 {
+  font-size: 2.5rem;
+  color: #2059d4;
+  margin-bottom: 10px;
+}
+
+.image-credit {
+  font-size: 0.9rem;
+  color: #888;
   margin-bottom: 30px;
 }
 
-.about-page {
-    font-family: 'Roboto', sans-serif;
-    padding: 50px;
-    background-color: #f9f9f9;
-  }
-  
-  .about-page h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    color: #333;
-    text-align: center;
-  }
-  
-  .about-page p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: black;
-  }
-  
-  .about-us {
-    background-color: #fff;
-    padding: 30px;
-    margin-bottom: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-  }
-  .about-image{
-    display: flex;
-  }
-  
-  .what-we-offer {
-    margin-bottom: 40px;
-  }
-  
-  .offerings {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-  }
-  
-  .offering {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    text-align: center;
-  }
-  
-  .offering img {
-    max-width: 100%;
-    
-    margin-bottom: 15px;
-  }
-  
-  .offering h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #007bff;
-  }
-  
-  .our-team {
-    text-align: center;
-  }
-  
-  .team-members {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
-  }
-  
-  .team-member {
-    text-align: center;
-    flex: 1;
-    max-width: 200px;
-  }
-  
-  .team-member img {
-    width: 100px; /* Set a specific width */
-    height: 100px; /* Set the same height as width */
-    object-fit: cover; /* Ensure the image covers the area and maintains aspect ratio */
-    border-radius: 100%; /* Make the image a perfect circle */
-    margin-bottom: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.team-members {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
 }
 
-  
-  .team-member h3 {
-    font-size: 1.3rem;
-    margin-bottom: 5px;
+.team-member {
+  background-color: #f5f5f5;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+}
+
+.member-image {
+  margin-bottom: 20px;
+}
+
+.member-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.team-member h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: black;
+}
+
+.position {
+  font-size: 1rem;
+  color: black;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: black;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .about-section {
+    padding: 30px 15px;
   }
-  
-  .team-member p {
+
+  .about-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-image {
+    margin-bottom: 20px;
+  }
+
+  .about-text {
+    padding-left: 0;
+  }
+
+  .about-details {
+    flex-direction: column;
+  }
+
+  .detail-box {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
     font-size: 1rem;
-    color: #777;
   }
-  
-  
+
+  .about-section {
+    padding: 20px 10px;
+  }
+
+  .about-header {
+    flex-direction: column;
+  }
+
+  .profile-image img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .about-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+  }
+
+  .learn-more {
+    font-size: 0.9rem;
+  }
+
+  .team-member {
+    padding: 30px;
+    max-width: 300px;
+  }
+
+  .member-image img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .team-member h3 {
+    font-size: 1.2rem;
+  }
+
+  .position {
+    font-size: 0.9rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 20px 0;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .about-section {
+    padding: 15px 5px;
+  }
+
+  .about-header {
+    flex-direction: column;
+  }
+
+  .profile-image img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .about-text h2 {
+    font-size: 1.25rem;
+  }
+
+  .about-text p {
+    font-size: 0.8rem;
+  }
+
+  .learn-more {
+    font-size: 0.8rem;
+  }
+
+  .team-member {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .member-image img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .team-member h3 {
+    font-size: 1rem;
+  }
+
+  .position {
+    font-size: 0.8rem;
+  }
+
+  .description {
+    font-size: 0.7rem;
+  }
+}

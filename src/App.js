@@ -15,7 +15,8 @@ function App() {
       <div className="App">
         <nav>
           <div className="nav-logo">
-            <img src="/images/logo-2.png" alt="Logo" />
+            <img src="./image/logo-2.png" alt="Logo" />
+
 
           </div>
           <ul>
@@ -37,7 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<About />} />
-          <Route path="/career-services" element={<CareerServices />} />
+          <Route path="/careerservices" element={<CareerServices />} />
           <Route path="/loginsignup" element={<LoginSignUp />} />
         </Routes>
       </div>
