@@ -7,7 +7,7 @@ const AboutPage = () => {
         <div className='body'>
             <section className="hero-section">
                 <div className="hero-content">
-                    <h1>Welcome to Britique</h1>
+                    <h1>Welcome to Briteque</h1>
                     <p>Your success is our priority. Discover what we can do for you.</p>
                 </div>
             </section>
@@ -18,7 +18,7 @@ const AboutPage = () => {
                     </div>
                     <div className="about-text">
                         <h2>About Us</h2>
-                        <p>At Britique, our team of education professionals brings over 20 years of expertise in delivering tailored careers advice, guidance, and employability skills. We are dedicated to supporting individuals facing unemployment, redundancy, or barriers to the labor market, including those with disabilities or special educational needs. Our commitment to innovation and excellence ensures that every program we offer is designed to achieve positive outcomes for our customers.</p>
+                        <p>At Briteque, our team of education professionals brings over 20 years of expertise in delivering tailored careers advice, guidance, and employability skills. We are dedicated to supporting individuals facing unemployment, redundancy, or barriers to the labor market, including those with disabilities or special educational needs. Our commitment to innovation and excellence ensures that every program we offer is designed to achieve positive outcomes for our customers.</p>
                         <button className="learn-more">EXPLORE MORE </button>
 
                     </div>

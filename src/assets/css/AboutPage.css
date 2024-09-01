@@ -1,6 +1,6 @@
 /* Base Styles */
 .body {
-  font-family: sans-serif medium;
+  font-family: sans-serif;
   margin: 0;
 }
 
@@ -8,8 +8,7 @@
   background-image: url('../images/background.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  padding: 35px 0;
+  padding: 65px 0;
   text-align: center;
   color: white;
 }
@@ -28,7 +27,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
-  background-color: #f5f5f5;
+  background-color: white;
 }
 
 .about-header {
@@ -96,7 +95,7 @@
 .detail-box {
   flex: 1;
   padding: 20px;
-  background-color: #fff;
+  background-color: #007bff5a;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-right: 20px;
@@ -139,19 +138,25 @@
 .team-members {
   display: flex;
   justify-content: center;
-  gap: 60px;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  gap: 80px;
+  margin-top: 30px;
 }
 
 .team-member {
-  background-color: #f5f5f5;
+  background-color: #007bff5a;
   padding: 50px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 450px;
+  width: 100%; /* Make it responsive by default */
+  box-sizing: border-box;
+  margin-bottom: 20px; 
 }
 
 .member-image {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .member-image img {
@@ -165,6 +170,7 @@
   font-size: 1.5rem;
   margin-bottom: 5px;
   color: black;
+  text-align: center;
 }
 
 .position {
@@ -173,11 +179,64 @@
   margin-bottom: 15px;
   text-transform: uppercase;
   font-weight: bold;
+  text-align: center;
 }
 
 .description {
   font-size: 0.9rem;
   color: black;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .team-members {
+    gap: 20px; /* Reduce the gap between team members */
+  }
+
+  .team-member {
+    padding: 30px; /* Reduce padding for smaller screens */
+    max-width: 100%; /* Ensure it takes full width on smaller screens */
+  }
+
+  .member-image img {
+    width: 120px; /* Reduce image size */
+    height: 120px;
+  }
+
+  .team-member h3 {
+    font-size: 1.2rem;
+  }
+
+  .position {
+    font-size: 0.9rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-member {
+    padding: 20px; /* Further reduce padding for small phones */
+    max-width: 100%; /* Ensure it takes full width on small screens */
+  }
+
+  .member-image img {
+    width: 100px; /* Further reduce image size */
+    height: 100px;
+  }
+
+  .team-member h3 {
+    font-size: 1rem;
+  }
+
+  .position {
+    font-size: 0.8rem;
+  }
+
+  .description {
+    font-size: 0.7rem;
+  }
 }
 
 /* Media Queries */

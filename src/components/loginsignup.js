@@ -1,80 +1,87 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import '../assets/css/Auth.css';
-// Assuming you have a separate CSS file for styling
 
-const AuthForm = () => {
-    // State to manage the active form
-    const [isSignUp, setIsSignUp] = useState(true);
+const LoginRegisterForm = () => {
+    const [activePanel, setActivePanel] = useState(false);
+    const formRef = useRef(null);
 
-    // Function to toggle between Sign Up and Sign In forms
-    const handleSignUpClick = () => {
-        setIsSignUp(true);
-    };
+    useEffect(() => {
+        const panelOneHeight = formRef.current.querySelector('.form-panel.one').scrollHeight;
+        const panelTwoHeight = formRef.current.querySelector('.form-panel.two').scrollHeight;
 
-    const handleSignInClick = () => {
-        setIsSignUp(false);
+        if (activePanel) {
+            formRef.current.style.height = `${panelTwoHeight}px`;
+        } else {
+            formRef.current.style.height = `${panelOneHeight}px`;
+        }
+    }, [activePanel]);
+
+    const togglePanel = () => {
+        setActivePanel(!activePanel);
     };
 
     return (
-        <div className={`container ${!isSignUp ? 'active' : ''}`} id="container">
-            <div className={`form-container sign-up ${isSignUp ? 'active' : ''}`}>
-                <form>
-                    <h1>Create Account</h1>
-                    <div className="social-icons">
-                        <a href="#" className="icon"><i className="fa-brands fa-google-plus-g"></i></a>
-                        <a href="#" className="icon"><i className="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" className="icon"><i className="fa-brands fa-github"></i></a>
-                        <a href="#" className="icon"><i className="fa-brands fa-linkedin-in"></i></a>
-                    </div>
-                    <span>or use your email for registration</span>
-                    <input type="text" placeholder="Name" />
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
-                    <button type="button">Sign Up</button>
-                </form>
+        <div className="form" ref={formRef}>
+            <div className="form-toggle" onClick={togglePanel}></div>
+
+            <div className={`form-panel one ${!activePanel ? '' : 'hidden'}`}>
+                <div className="form-header">
+                    <h1>Account Login</h1>
+                </div>
+                <div className="form-content">
+                    <form>
+                        <div className="form-group">
+                            <label htmlFor="username">Username</label>
+                            <input type="text" id="username" name="username" required />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="password">Password</label>
+                            <input type="password" id="password" name="password" required />
+                        </div>
+                        <div className="form-group">
+                            <label className="form-remember">
+                                <input type="checkbox" />
+                                Remember Me
+                            </label>
+                            <a className="form-recovery" href="#">Forgot Password?</a>
+                        </div>
+                        <div className="form-group">
+                            <button type="submit">Log In</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div className={`form-container sign-in ${!isSignUp ? 'active' : ''}`}>
-                <form>
-                    <h1>Sign In</h1>
-                    <div className="social-icons">
-                        <a href="#" className="icon"><i className="fa-brands fa-google-plus-g"></i></a>
-                        <a href="#" className="icon"><i className="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" className="icon"><i className="fa-brands fa-github"></i></a>
-                        <a href="#" className="icon"><i className="fa-brands fa-linkedin-in"></i></a>
-                    </div>
-                    <span>or use your email password</span>
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
-                    <a href="#">Forgot Your Password?</a>
-                    <button type="button">Sign In</button>
-                </form>
-            </div>
-            <div className="toggle-container">
-                <div className="toggle">
-                    <div className="toggle-panel toggle-left">
-                        <h1>Welcome Back!</h1>
-                        <p>Enter your personal details to use all of the site's features</p>
-                        <button
-                            className={`hidden ${isSignUp ? '' : 'active'}`}
-                            onClick={handleSignInClick}
-                        >
-                            Sign In
-                        </button>
-                    </div>
-                    <div className="toggle-panel toggle-right">
-                        <h1>Hello, Friend!</h1>
-                        <p>Register with your personal details to use all of the site's features</p>
-                        <button
-                            className={`hidden ${isSignUp ? 'active' : ''}`}
-                            onClick={handleSignUpClick}
-                        >
-                            Sign Up
-                        </button>
-                    </div>
+
+            <div className={`form-panel two ${activePanel ? 'active' : ''}`} onClick={togglePanel}>
+                <div className="form-header">
+                    <h1>Register Account</h1>
+                </div>
+                <div className="form-content">
+                    <form>
+                        <div className="form-group">
+                            <label htmlFor="username">Username</label>
+                            <input type="text" id="username" name="username" required />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="password">Password</label>
+                            <input type="password" id="password" name="password" required />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="cpassword">Confirm Password</label>
+                            <input type="password" id="cpassword" name="cpassword" required />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="email">Email Address</label>
+                            <input type="email" id="email" name="email" required />
+                        </div>
+                        <div className="form-group">
+                            <button type="submit">Register</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     );
 };
 
-export default AuthForm;
+export default LoginRegisterForm;
