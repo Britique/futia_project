@@ -11,6 +11,7 @@
   padding: 65px 0;
   text-align: center;
   color: white;
+  margin-top: 100px;
 }
 
 .hero-content h1 {
@@ -69,7 +70,7 @@
 
 .learn-more {
   padding: 10px 20px;
-  background-color: #0056b3;
+  background-color: #012A87;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -125,7 +126,7 @@
 
 .meet-the-team h2 {
   font-size: 2.5rem;
-  color: #2059d4;
+  color: #012A87;
   margin-bottom: 10px;
 }
 

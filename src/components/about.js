@@ -60,7 +60,9 @@ const AboutPage = () => {
                 </div>
             </div>
             <footer className="footer">
-                <p>&copy; 2024 Your Company. All rights reserved.</p>
+
+                <p></p>
+                <p>&copy; 2024 Briteque. All rights reserved.</p>
             </footer>
         </div>
     );

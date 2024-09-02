@@ -1,0 +1,89 @@
+/* src/components/Careers/CareersPage.css */
+
+.careers-container {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin-top: 100px;
+  }
+  
+  .careers-header {
+    text-align: center;
+    padding: 20px;
+    background-color: #012A87;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+  
+  .careers-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .careers-header p {
+    font-size: 1.2em;
+  }
+  
+  .careers-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+  }
+  
+  .card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .card h2 {
+    color: #012A87;
+    margin-bottom: 15px;
+  }
+  
+  .card p, .card ul {
+    font-size: 1em;
+    line-height: 1.6;
+  }
+  
+  .card ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .download-section {
+    text-align: center;
+  }
+  
+  .download-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #012A87;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .download-btn:hover {
+    background-color: #012A87;
+  }
+  
+  @media (max-width: 768px) {
+    .careers-section {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 90%;
+    }
+  }
+  
