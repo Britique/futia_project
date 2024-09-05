@@ -14,7 +14,7 @@ const AboutPage = () => {
             <div className="about-section">
                 <div className="about-header">
                     <div className="profile-image">
-                        <img src='./image/person.jpg' alt="Profile" />
+                        <img src='./image/image-2.jpeg' alt="Profile" />
                     </div>
                     <div className="about-text">
                         <h2>About Us</h2>
@@ -43,19 +43,19 @@ const AboutPage = () => {
                 <div className="team-members">
                     <div className="team-member">
                         <div className="member-image">
-                            <img src='./image/person.jpg' alt="ulric quee" />
+                            <img src='./image/ulric1.png' alt="ulric quee" />
                         </div>
                         <h3>ULRIC QUEE</h3>
                         <p className="position">FOUNDER</p>
-                        <p className="description">Experienced technology and legal professional with 15+ years at the crossroads of technology, cybersecurity, and data privacy law. Expert in navigating regulations and technical landscapes to help clients manage risks, ensure compliance, and handle data breaches effectively. Holds a Bachelor's in Computer Science and Law, and a Master's in Privacy and Cybersecurity Law.</p>
+
                     </div>
                     <div className="team-member">
                         <div className="member-image">
-                            <img src='./image/person.jpg' alt="linda kamara" />
+                            <img src='./image/linda.png' alt="linda kamara" />
                         </div>
                         <h3>LINDA KAMARA</h3>
                         <p className="position">FOUNDER</p>
-                        <p className="description">Education and employability professional with over 10 years of experience in the Education and Welfare-to-Work sectors, including post-16 and adult education. Expertise in working with diverse student groups, including those with SEND, across various educational settings. Linda is a member of the Institute of Employability Professionals (IEP), with a PGCE in 16+ and Adult Education, a Master’s in International Relations and Security Studies, and a BA (Hons) in Politics. Committed to fostering students' personal and academic growth and supporting their career and higher education goals.</p>
+
                     </div>
                 </div>
             </div>
